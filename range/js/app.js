@@ -5,29 +5,17 @@ const clickFunction = () => {
     if(str !== ""){
         let  i, j;
         for(i=1; i<=num; i++){
-            let c = 0, sum = 0, counter = 0;
-            for(j=1; j<=i; j++){
-                if(i%j == 0){
-                    c++;
-                }
+            let ar = i.toString().split("");
+            let sum =0, prod = 1;
+            for(let j=0; j<ar.length; j++){
+                sum = sum + parseInt(ar[j]);
+                prod = prod * parseInt(ar[j]);
             }
-            if(c==2){
-                let ar = i.toString().split("");
-                for(j=0; j<ar.length; j++){
-                    sum = sum + parseInt(ar[j]);
-                }
-    
-                for(j=1; j<=sum; j++){
-                    if(sum%j == 0){
-                        counter++;
-                    }
-                }
-                
-                if(counter == 2){
-                    var para = document.createElement("p");
-                    para.innerHTML = "Howling Prime: "+ i;
-                    document.getElementById('opText').appendChild(para);      
-                }
+            
+            if(sum === prod){
+                var para = document.createElement("p");
+                para.innerHTML = "Spy Numbers: "+ i;
+                document.getElementById('opText').appendChild(para);      
             }
         }
     }

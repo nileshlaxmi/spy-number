@@ -3,8 +3,8 @@ const clickFunction = () => {
     if(str !== ""){
         let num = parseInt(str);
         let sum = 0,  prod = 1, i;
-
         let ar = str.split("");
+
         for(i=0; i<ar.length; i++){
             let num = parseInt(ar[i]);
             sum = sum + num;
